@@ -7,11 +7,12 @@ the big- and little-endian byte orders.  However, it contains no way to obtain
 the native endianness of the currently-running binary.  In most cases,
 [you shouldn't need to know this](https://commandcenter.blogspot.com/2012/04/byte-order-fallacy.html).
 
-In the rare case that you actually care about byte order in a Go program, this
-package exports a single function, `NativeEndian` that returns the `ByteOrder`
-from the `encoding/binary` package corresponding to the currently-running
-program.  Unlike [other projects](https://github.com/koneu/natend), this
-package does not rely on `unsafe`, instead opting for compile-time flags.
+In the rare case that you actually care about native byte order in a Go
+program, this package exports a single function, `NativeEndian` that returns
+the `ByteOrder` from the `encoding/binary` package corresponding to the
+currently-running program.  Unlike [other projects](https://github.com/koneu/natend),
+this package does not rely on `unsafe`. Instead, it determines endianness of
+the program at compile time using build tags.
 
 Usage
 -----
