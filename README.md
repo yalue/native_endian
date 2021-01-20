@@ -10,9 +10,8 @@ the native endianness of the currently-running binary.  In most cases,
 In the rare case that you actually care about native byte order in a Go
 program, this package exports a single function, `NativeEndian` that returns
 the `ByteOrder` from the `encoding/binary` package corresponding to the
-currently-running program.  Unlike [other projects](https://github.com/koneu/natend),
-this package does not rely on `unsafe`. Instead, it determines endianness of
-the program at compile time using build tags.
+currently-running program.  This package does not rely on `unsafe`. Instead, it
+determines endianness of the program at compile time using build tags.
 
 Usage
 -----
